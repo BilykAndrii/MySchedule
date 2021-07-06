@@ -66,9 +66,9 @@ public class WorkerShiftControllerTest {
 
         // then
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
-        assertThat(response.getBody().getMessage()).contains("Worker name is empty");
-        assertThat(response.getBody().getMessage()).contains("Shift name is not valid");
-        assertThat(response.getBody().getMessage()).contains("Date is not valid");
+        assertThat(response.getBody().getMessage()).contains("worker name is empty");
+        assertThat(response.getBody().getMessage()).contains("shift name is not valid");
+        assertThat(response.getBody().getMessage()).contains("date is not valid");
     }
 
     @Test

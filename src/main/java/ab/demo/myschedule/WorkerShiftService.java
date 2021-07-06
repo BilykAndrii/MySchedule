@@ -14,9 +14,9 @@ import java.util.List;
 @Transactional
 public class WorkerShiftService {
 
-    private static final String SHIFT_NOT_VALID = "Shift name is not valid, please see help info";
-    private static final String NAME_NOT_VALID = "Worker name is empty";
-    private static final String DATE_NOT_VALID = "Date is not valid, format is \"YYYY-MM-dd\"";
+    private static final String SHIFT_NOT_VALID = "shift name is not valid, see /help";
+    private static final String NAME_NOT_VALID = "worker name is empty";
+    private static final String DATE_NOT_VALID = "date is not valid, format is YYYY-MM-dd";
 
     @Value("${help.info:}")
     private String helpInfo;
@@ -29,12 +29,12 @@ public class WorkerShiftService {
 
         if (Strings.isBlank(name)) {
             message.append(NAME_NOT_VALID);
-            message.append("\n");
+            message.append("; ");
         }
 
         if (dateIsRequired && dateNotValid(date)) {
             message.append(DATE_NOT_VALID);
-            message.append("\n");
+            message.append("; ");
         }
 
         if (shiftIsRequired && shiftNotValid(shift)) {
