@@ -96,7 +96,7 @@ public class WorkerShiftController {
     }
 
     @DeleteMapping("/removeAll/{worker}")
-    public ResponseEntity<WorkerShiftResponse> removeShift(@PathVariable String worker) {
+    public ResponseEntity<WorkerShiftResponse> removeAllShifts(@PathVariable String worker) {
 
         String validation = service.validateParameters(worker, null, null, false, false);
         if (!validation.isEmpty()) {
