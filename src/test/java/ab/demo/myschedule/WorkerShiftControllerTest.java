@@ -114,7 +114,7 @@ public class WorkerShiftControllerTest {
     public void removeAllTest() throws Exception {
         // given
         RestTemplate template = new RestTemplate(new CustomClientHttpRequestFactory());
-        String url = "http://localhost:5000/api/shifts/removeAll/{worker}";
+        String url = "http://localhost:8081/api/shifts/removeAll/{worker}";
 
         WorkerShift someExpected = WorkerShift.of("anotherWorker", LocalDate.parse("2033-03-11"), Timetable.THIRD.description());
         repo.save(someExpected);
